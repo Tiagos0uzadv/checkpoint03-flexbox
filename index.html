@@ -3,140 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vinheria Agnello | Vinhos Selecionados</title>
-    <!-- Fonte do Google Fonts: Playfair Display (títulos) e Lato (textos) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <!-- Folha de estilo separada, conforme requisito do checkpoint -->
+    <title>Vinheria Agnello</title>
     <link rel="stylesheet" href="css/flex-style.css">
 </head>
 <body>
 
-
     <header class="cabecalho">
-        <a href="#inicio" class="logo">Vinheria <span>Agnello</span></a>
-
-        
+        <a href="#inicio" class="logo">Vinheria Agnello</a>
         <nav class="menu">
-            <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#vinhos">Vinhos</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
+            <a href="#inicio">Início</a>
+            <a href="#vinhos">Vinhos</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
         </nav>
     </header>
 
-    <main>
+    <section id="inicio" class="destaque">
+        <h1>A arte de escolher o vinho certo</h1>
+        <p>Rótulos nacionais e importados para os seus melhores momentos.</p>
+        <a href="#vinhos" class="botao">Conheça nossa seleção</a>
+    </section>
 
-        <section id="inicio" class="destaque">
-            <p class="destaque-sub">Desde 1987 · São Paulo</p>
-            <h1>A arte de escolher o vinho certo</h1>
-            <p>Rótulos nacionais e importados, selecionados um a um para acompanhar seus melhores momentos.</p>
-            <a href="#vinhos" class="botao">Conheça nossa seleção</a>
-        </section>
+    <section id="vinhos" class="secao">
+        <h2>Nossa Seleção</h2>
 
-
-        <section id="vinhos" class="secao">
-            <h2 class="titulo-secao">Nossa Seleção</h2>
-
-            <div class="cards">
-                
-                <article class="card">
-                    <div class="card-imagem tinto">🍷</div>
-                    <div class="card-corpo">
-                        <span class="card-tag">Tinto</span>
-                        <h3>Malbec Reserva</h3>
-                        <p>Mendoza, Argentina. Notas de ameixa, violeta e um toque de baunilha.</p>
-                        <div class="card-rodape">
-                            <span class="preco">R$ 129,90</span>
-                            <button class="botao-card">Comprar</button>
-                        </div>
-                    </div>
-                </article>
-
-                
-                <article class="card">
-                    <div class="card-imagem branco">🥂</div>
-                    <div class="card-corpo">
-                        <span class="card-tag">Branco</span>
-                        <h3>Sauvignon Blanc</h3>
-                        <p>Vale Central, Chile. Fresco e cítrico, ideal com frutos do mar.</p>
-                        <div class="card-rodape">
-                            <span class="preco">R$ 89,90</span>
-                            <button class="botao-card">Comprar</button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Card 3 -->
-                <article class="card">
-                    <div class="card-imagem rose">🌸</div>
-                    <div class="card-corpo">
-                        <span class="card-tag">Rosé</span>
-                        <h3>Rosé de Provence</h3>
-                        <p>Provence, França. Leve, floral, com notas de morango e pêssego.</p>
-                        <div class="card-rodape">
-                            <span class="preco">R$ 149,90</span>
-                            <button class="botao-card">Comprar</button>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Card 4 -->
-                <article class="card">
-                    <div class="card-imagem espumante">🍾</div>
-                    <div class="card-corpo">
-                        <span class="card-tag">Espumante</span>
-                        <h3>Brut Nature</h3>
-                        <p>Serra Gaúcha, Brasil. Perlage fino e acidez marcante.</p>
-                        <div class="card-rodape">
-                            <span class="preco">R$ 99,90</span>
-                            <button class="botao-card">Comprar</button>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-
-        <section id="sobre" class="secao sobre">
-            <div class="sobre-texto">
-                <h2 class="titulo-secao">Sobre a Agnello</h2>
-                <p>A Vinheria Agnello nasceu de uma paixão familiar pelo vinho. Há mais de três décadas
-                   ajudamos clientes a encontrar o rótulo ideal para cada ocasião, com atendimento
-                   próximo e curadoria feita por sommeliers.</p>
+        <div class="cards">
+            <div class="card">
+                <div class="card-imagem">🍷</div>
+                <h3>Malbec Reserva</h3>
+                <p>Mendoza, Argentina.</p>
+                <span class="preco">R$ 129,90</span>
+                <button class="botao-card">Comprar</button>
             </div>
 
-            
-            <ul class="diferenciais">
-                <li><span class="icone">🍇</span> Curadoria feita por sommeliers</li>
-                <li><span class="icone">🚚</span> Entrega para todo o Brasil</li>
-                <li><span class="icone">🎁</span> Kits e embalagens para presente</li>
-                <li><span class="icone">🧀</span> Dicas de harmonização</li>
-            </ul>
-        </section>
+            <div class="card">
+                <div class="card-imagem">🥂</div>
+                <h3>Sauvignon Blanc</h3>
+                <p>Vale Central, Chile.</p>
+                <span class="preco">R$ 89,90</span>
+                <button class="botao-card">Comprar</button>
+            </div>
 
+            <div class="card">
+                <div class="card-imagem">🌸</div>
+                <h3>Rosé de Provence</h3>
+                <p>Provence, França.</p>
+                <span class="preco">R$ 149,90</span>
+                <button class="botao-card">Comprar</button>
+            </div>
 
-        <section id="contato" class="secao contato">
-            <h2 class="titulo-secao">Receba nossas novidades</h2>
-            <p>Cadastre seu e-mail e fique por dentro de lançamentos e promoções.</p>
-            <form class="form-newsletter" action="#" onsubmit="return false;">
-                <label for="email" class="sr-only">E-mail</label>
-                <input type="email" id="email" placeholder="seu@email.com" required>
-                <button type="submit" class="botao">Inscrever</button>
-            </form>
-        </section>
-    </main>
+            <div class="card">
+                <div class="card-imagem">🍾</div>
+                <h3>Brut Nature</h3>
+                <p>Serra Gaúcha, Brasil.</p>
+                <span class="preco">R$ 99,90</span>
+                <button class="botao-card">Comprar</button>
+            </div>
+        </div>
+    </section>
 
+    <section id="sobre" class="secao sobre">
+        <div class="sobre-texto">
+            <h2>Sobre a Agnello</h2>
+            <p>A Vinheria Agnello nasceu de uma paixão familiar pelo vinho. Ajudamos
+               nossos clientes a encontrar o vinho ideal para cada ocasião.</p>
+        </div>
+
+        <ul class="diferenciais">
+            <li>Curadoria feita por sommeliers</li>
+            <li>Entrega para todo o Brasil</li>
+            <li>Kits para presente</li>
+            <li>Dicas de harmonização</li>
+        </ul>
+    </section>
+
+    <section id="contato" class="secao contato">
+        <h2>Receba nossas novidades</h2>
+        <form class="form-newsletter">
+            <input type="email" placeholder="Vinheria.Agnello@email.com">
+            <button type="submit" class="botao">Inscrever</button>
+        </form>
+    </section>
 
     <footer class="rodape">
-        <p>&copy; 2026 Vinheria Agnello · Desenvolvido por Tiago Santos</p>
+        <p>&copy; Tiago Santos</p>
         <div class="redes">
-            <a href="#" aria-label="Instagram">IG</a>
-            <a href="#" aria-label="Facebook">FB</a>
-            <a href="#" aria-label="WhatsApp">WA</a>
+            <a href="#">IG</a>
+            <a href="#">FB</a>
+            <a href="#">WA</a>
         </div>
     </footer>
 
