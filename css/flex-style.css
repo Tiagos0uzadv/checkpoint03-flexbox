@@ -1,0 +1,429 @@
+
+:root {
+    --vinho: #6b0f1a;
+    --vinho-escuro: #3d0810;
+    --dourado: #c9a227;
+    --creme: #f8f3ec;
+    --texto: #2b2b2b;
+    --branco: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; 
+}
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--creme);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+h1, h2, h3, .logo {
+    font-family: 'Playfair Display', serif;
+}
+
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+
+.cabecalho {
+    display: flex;                   
+    justify-content: space-between;  
+    align-items: center;             
+    flex-wrap: wrap;                 
+    gap: 1rem;
+    padding: 1rem 5%;
+    background-color: var(--vinho-escuro);
+    position: sticky;                
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    color: var(--branco);
+    font-size: 1.6rem;
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--dourado);
+}
+
+.menu ul {
+    display: flex;   
+    gap: 1.5rem;   
+    list-style: none;
+}
+
+.menu a {
+    display: inline-block;  
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 0.3rem 0;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+
+.menu a:hover {
+    color: var(--dourado);
+    border-bottom-color: var(--dourado);
+    transform: translateY(-3px);
+}
+
+
+.menu a:focus-visible,
+.logo:focus-visible {
+    outline: 2px dashed var(--dourado);
+    outline-offset: 4px;
+}
+
+
+.destaque {
+    display: flex;
+    flex-direction: column;   /* empilha os elementos verticalmente */
+    justify-content: center;  /* centraliza no eixo principal (vertical) */
+    align-items: center;      /* centraliza no eixo cruzado (horizontal) */
+    gap: 1.2rem;
+    min-height: 80vh;
+    padding: 3rem 5%;
+    text-align: center;
+    color: var(--branco);
+    background: linear-gradient(135deg, var(--vinho-escuro), var(--vinho) 60%, #8e1b2b);
+}
+
+.destaque h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    max-width: 800px;
+}
+
+.destaque p {
+    max-width: 600px;
+    font-size: 1.1rem;
+}
+
+.destaque-sub {
+    color: var(--dourado);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 0.9rem !important;
+}
+
+/* Botão principal (usado no hero e no formulário) */
+.botao {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--dourado);
+    color: var(--vinho-escuro);
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+/* PSEUDO-CLASSES :hover e :focus -> sombra + cor mais clara
+   TRANSFORMAÇÃO scale -> botão aumenta 10% */
+.botao:hover,
+.botao:focus {
+    background-color: #e0b93a;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+    outline: none;
+}
+
+/* PSEUDO-CLASSE :active -> efeito de "clique" (botão afunda) */
+.botao:active {
+    transform: scale(0.95);
+}
+
+
+.secao {
+    padding: 4rem 5%;
+}
+
+.titulo-secao {
+    color: var(--vinho);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;          
+    justify-content: center;  
+    gap: 2rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;   
+    flex: 1 1 240px;          
+    max-width: 280px;
+    background-color: var(--branco);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(107, 15, 26, 0.25);
+}
+
+.card-imagem {
+    display: flex;            
+    justify-content: center;
+    align-items: center;
+    height: 160px;
+    font-size: 4rem;
+    transition: transform 0.4s;
+}
+
+
+.tinto      { background: linear-gradient(135deg, #6b0f1a, #a4243b); }
+.branco     { background: linear-gradient(135deg, #e9dca0, #f6efc8); }
+.rose       { background: linear-gradient(135deg, #f4a6b7, #fbd3dc); }
+.espumante  { background: linear-gradient(135deg, #d6c48a, #f3ead0); }
+
+
+.card:hover .card-imagem {
+    transform: rotate(-8deg) scale(1.15);
+}
+
+.card-corpo {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;             
+    gap: 0.6rem;
+    padding: 1.2rem;
+}
+
+.card-tag {
+    align-self: flex-start;   
+    padding: 0.2rem 0.7rem;
+    border-radius: 20px;
+    background-color: var(--creme);
+    color: var(--vinho);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.card h3 {
+    color: var(--vinho-escuro);
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.card-rodape {
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;
+    margin-top: auto;                
+}
+
+.preco {
+    font-weight: 700;
+    color: var(--vinho);
+    font-size: 1.1rem;
+}
+
+.botao-card {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--vinho);
+    border-radius: 20px;
+    background-color: transparent;
+    color: var(--vinho);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+
+.botao-card:hover,
+.botao-card:focus-visible {
+    background-color: var(--vinho);
+    color: var(--branco);
+    transform: rotate(-3deg) scale(1.08);
+    outline: none;
+}
+
+
+.sobre {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 3rem;
+    background-color: var(--branco);
+}
+
+.sobre-texto {
+    flex: 1 1 350px;   
+}
+
+.sobre-texto .titulo-secao {
+    text-align: left;
+}
+
+.diferenciais {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 300px;
+    gap: 1rem;
+    list-style: none;
+}
+
+.diferenciais li {
+    display: flex;          
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-left: 4px solid var(--dourado);
+    background-color: var(--creme);
+    border-radius: 6px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+
+.diferenciais li:nth-child(even) {
+    border-left-color: var(--vinho);
+}
+
+
+.diferenciais li:hover {
+    transform: translateX(10px);
+    background-color: #f1e6d6;
+}
+
+.icone {
+    font-size: 1.6rem;
+}
+
+
+.contato {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+}
+
+.contato .titulo-secao {
+    margin-bottom: 0.5rem;
+}
+
+.form-newsletter {
+    display: flex;        
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 1rem;
+}
+
+.form-newsletter input {
+    flex: 1 1 250px;      
+    padding: 0.8rem 1.2rem;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+/* PSEUDO-CLASSE :focus -> borda dourada, sombra e leve aumento (scale) */
+.form-newsletter input:focus {
+    border-color: var(--dourado);
+    box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.25);
+    transform: scale(1.03);
+    outline: none;
+}
+
+/* PSEUDO-CLASSE :invalid (só depois de digitar algo) -> borda vermelha */
+.form-newsletter input:not(:placeholder-shown):invalid {
+    border-color: #c0392b;
+}
+
+
+.rodape {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1.5rem 5%;
+    background-color: var(--vinho-escuro);
+    color: #ddd;
+    font-size: 0.9rem;
+}
+
+.redes {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.redes a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--dourado);
+    color: var(--dourado);
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: transform 0.4s, background-color 0.3s, color 0.3s;
+}
+
+
+.redes a:hover,
+.redes a:focus-visible {
+    transform: rotate(360deg);
+    background-color: var(--dourado);
+    color: var(--vinho-escuro);
+    outline: none;
+}
+
+
+@media (max-width: 600px) {
+    .cabecalho {
+        flex-direction: column;   /* logo em cima, menu embaixo */
+    }
+
+    .menu ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .rodape {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
